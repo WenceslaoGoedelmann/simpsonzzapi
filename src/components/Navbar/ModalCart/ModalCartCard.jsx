@@ -39,7 +39,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id }) => {
           bgColor='var(--btn-gradient-secondary)'
           onClick={() => dispatch(removeToCart(id))}
         >
-          { quantity === 1 ? <IoMdTrash /> : <FaMinus />} {/* si la cantidad es 1 muestro el tachito de basura y cuando hay mas de uno muestro el icono de - */}
+          { quantity === 1 ? <IoMdTrash /> : <FaMinus />} 
         </Increase>
         <Count>{quantity}</Count>
         <Increase onClick={() => dispatch(addToCart({ img, title, desc, price, quantity, id }))}>

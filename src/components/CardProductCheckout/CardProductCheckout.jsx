@@ -36,7 +36,7 @@ const CardProductCheckout = ({ img, title, desc, price, quantity, id }) => {
           bgColor='var(--btn-gradient-secondary)'
           onClick={() => dispatch(removeToCart(id))}
         >
-         {quantity === 1 ? <IoMdTrash /> : <FaMinus />} {/* igual que el carrito */}
+         {quantity === 1 ? <IoMdTrash /> : <FaMinus />} 
         </Increase>
         <Count>{quantity}</Count>
         <Increase onClick={() => dispatch(addToCart({ img, title, desc, price, quantity, id }))}>

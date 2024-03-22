@@ -11,7 +11,7 @@ export const getOrders = async (dispatch, currentUser) => {
     const orders = await axios.get(`${BASE_URL}/orders`, { 
       headers: {
         'x-token': currentUser.token,
-      },/* como segundo argumento le paso el headers con el token */
+      },
     });
     if (orders) {
       dispatch(fetchOrdersSuccess(orders.data.data));
@@ -29,10 +29,10 @@ export const createOrder = async (order, dispatch, currentUser) => {
     const response = await axios.post(`${BASE_URL}/orders`, order, {
       headers: {
         'x-token': currentUser.token,
-      }, /*  como segundo argumento le paso el body con la orden, como tercer argumento le paso el headers con el token */
+      }, 
     });
     if (response) {
-      getOrders(dispatch, currentUser); /* luego de crear la nueva orden, llamo a la funcion anterior para que ya me traiga esta ultima orden y otras mas si las tuviese */
+      getOrders(dispatch, currentUser); 
     }
   } catch (error) {
     dispatch(createOrderFail('Oops, algo salío mal.'));

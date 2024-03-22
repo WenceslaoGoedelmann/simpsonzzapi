@@ -38,9 +38,9 @@ const Register = () => {
           actions.resetForm()
           //actions.preventDefault()
           if (user) {
-            dispatch(setCurrentUser({ /* paso como payload la respuesta del create user */
+            dispatch(setCurrentUser({ 
               ...user.usuario, 
-              token: user.token /*  el formato de la respuesta lo veo en la documentacion de la api*/
+              token: user.token 
             }))
           }
         }}

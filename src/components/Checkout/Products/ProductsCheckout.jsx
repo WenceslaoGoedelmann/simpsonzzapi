@@ -21,7 +21,7 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
       <ProductsTitleStyled>Tu pedido</ProductsTitleStyled>
       <CardsWrapperStyled>
         {
-          cartItems.length ? ( /* mismo funcionamiento del carrito */
+          cartItems.length ? ( 
             cartItems.map(item => <CardProductCheckout key={item.id} {...item} />)
           ) : (
             <p>Compra algo</p>

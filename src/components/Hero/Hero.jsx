@@ -17,13 +17,12 @@ import { selectProduct } from "../../redux/products/productsSlice";
 
 const Hero = ({ doScroll }) => {
 
-  const [value, setValue] = useState(""); /* creo un nuevo estado en este caso va a ser el valor ingresado en el input */
+  const [value, setValue] = useState(""); 
 
   const listOfProducts = useSelector((state) => state.products.products).map(
     (product) => product.title
-  ); /* de esta forma me creo un array con los nombres de cada producto */
+  ); 
 
- // console.log(listOfProducts);
   const dispatch = useDispatch();
 
   const handleSubmit = (e, value) => {
@@ -31,22 +30,22 @@ const Hero = ({ doScroll }) => {
     
     dispatch(selectCategory(null))
 
-    if(value === ""){ /* si limpio input, muestro todos los productos */
+    if(value === ""){ 
       return dispatch(selectProduct(null))
     }
 
-    const newProduct = value.trim().toLowerCase(); /* al valor ingresado en el input le saco lo espacios adelante y atras y lo paso a minuscula */
+    const newProduct = value.trim().toLowerCase(); 
 
     const selectedProduct = listOfProducts.find(
       (product) => product.toLowerCase() === newProduct
-    ); /* busco en el listado de produtos si alguno conincide con el producto ingresado y me devuelve un true si lo encuentra o un false si no */
+    ); 
 
-    if (selectedProduct) { /* si lo encotro: */
-      dispatch(selectProduct(selectedProduct)); /* paso como payload el producto seleccionado  */
-      doScroll(); /* llamo a la funcion que me lleva a la seccion de productos */
-    } else {/* si no: */
+    if (selectedProduct) { 
+      dispatch(selectProduct(selectedProduct)); 
+      doScroll(); 
+    } else {
       return (
-        alert("Producto no encontrado"), /* muestro un alert */
+        alert("Producto no encontrado"), 
         dispatch(selectProduct(null))
       )
         
@@ -56,30 +55,6 @@ const Hero = ({ doScroll }) => {
     }
   };
 
-  /*   
-  esto se ulitiza si en vez de querer buscar un producto, quiero buscar una categoria:
-
-  const listOfCategories = useSelector(
-    (state) => state.categories.categories
-  ).map((category) => category.category);
-
-  const dispatch = useDispatch()
-
-  const handleSubmit = (e, value) => {
-    e.preventDefault()
-
-    const newCategory = value.trim().toLowerCase().replace(' ', '') //.split(" ").join('')
-
-    const selectedCategory = listOfCategories.find(
-      category => category.toLowerCase() === newCategory
-    )
-    if (selectedCategory) {
-      dispatch(selectCategory(selectedCategory))
-      doScroll()
-    } else {
-      return alert('Categoria no encontrada')
-    }
-  } */
 
   return (
     <HeroContainerStyled>
@@ -88,7 +63,7 @@ const Hero = ({ doScroll }) => {
         <HeroFormStyled>
           <HeroSearchBarStyled
             value={value}
-            onChange={(e) => setValue(e.target.value)} /* llamo a la funcion que me cambia el estado del useState a medida que voy escribiendo en el input*/
+            onChange={(e) => setValue(e.target.value)} 
             type="text"
             placeholder="Ej. Homero"
           />
@@ -96,7 +71,7 @@ const Hero = ({ doScroll }) => {
             <AiOutlineSearch />
           </IconWrapperStyled>
           <Button 
-          onClick={(e) => handleSubmit(e, value)}  /* llamo a la funcion del sumbmiteo */
+          onClick={(e) => handleSubmit(e, value)} 
           radius="10">
             Buscar
           </Button>

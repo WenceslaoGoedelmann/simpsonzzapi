@@ -13,7 +13,7 @@ import { formatPrice } from '../../utils/formatPrice';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cart/cartSlice';
 
-const CardProducto = ({ img, title, desc, price, id }) => {/* de esta forma desectructuro las propiedades de products */
+const CardProducto = ({ img, title, desc, price, id }) => {
 
   const dispatch = useDispatch()
   return (
@@ -30,7 +30,7 @@ const CardProducto = ({ img, title, desc, price, id }) => {/* de esta forma dese
       <ContainerPrice>
         <CardPrice>{formatPrice(price)}</CardPrice>
         <Button onClick={() => 
-          dispatch(addToCart({ img, title, desc, price, id })) /* llamo a la funcion addToCart y le paso como payload todas las propiedades del producto */
+          dispatch(addToCart({ img, title, desc, price, id })) 
         }>Agregar</Button>
       </ContainerPrice>
     </ProductosCard>

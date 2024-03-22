@@ -25,7 +25,7 @@ const CardRecomendacion = ({ title, desc, price, img, id }) => {
         <CardPrice>{formatPrice(price)}</CardPrice>
       </CardText>
       <Button
-        onClick={() => dispatch(addToCart({ title, desc, price, img, id }))} /* llamo a la funcion addToCart y le paso como payload todas las propiedades del producto */
+        onClick={() => dispatch(addToCart({ title, desc, price, img, id }))} 
       >
         Agregar
       </Button>

@@ -21,7 +21,7 @@ function Home() {
     <HomeWrapper>
       {/* Hero Section */}
 
-      <Hero doScroll={doScroll}  /> {/* asi le paso la funcion doScroll al componete hero asi cuando en el imput  busco un producto, me lleve a la seccion de productos  */}
+      <Hero doScroll={doScroll}  /> 
 
       {/* Recomendados Section */}
       <RecomendadosWrapper>
@@ -36,7 +36,7 @@ function Home() {
       </CategoriasWrapper>
 
       {/* Populares Section*/}
-      <ProductosWrapper ref={productsRef} > {/* de esta forma indico a donde estoy haciendo la referencia */}
+      <ProductosWrapper ref={productsRef} > 
         <h2>Nuestras comidas</h2>
         <CardsProductos />
       </ProductosWrapper>

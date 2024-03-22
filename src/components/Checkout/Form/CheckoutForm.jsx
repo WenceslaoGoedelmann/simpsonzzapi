@@ -31,7 +31,7 @@ const CheckoutForm = ({ cartItems, shippingCost, price }) => {
             shippingCost,
             total: price + shippingCost,
             shippingDetails: { ...values }, 
-          }; /* el shippingDetails son los datos ingresados abajo para el envio */
+          }; 
 
           try {
             await createOrder(orderData, dispatch, currentUser);
@@ -42,7 +42,7 @@ const CheckoutForm = ({ cartItems, shippingCost, price }) => {
           }
         }}
       >
- {({ isSubmitting }) => ( /* el isSubmitting es una propiedad de formik que la uso cuando estoy enviando la orden me mueste el circulito de cargando ver mas abajo  */
+ {({ isSubmitting }) => ( 
           <Form>
             <Input
               htmlFor='nombre'

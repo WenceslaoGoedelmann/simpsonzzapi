@@ -11,16 +11,14 @@ const Layout = ({ children }) => {
   const hiddenCart = useSelector(state => state.cart.hidden)
 console.log ({hiddenMenu})
 console.log ({hiddenCart})
-/*   const {
-    hidden: hiddenCart,
-  } = useSelector(state => state.cart); */
+
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (!hiddenMenu) { /* cuando cambio el path si el menu esta abierto, lo cierro */
+    if (!hiddenMenu) { 
       dispatch(toggleHiddenMenu())
     }
-    if (!hiddenCart) { /* cuando cambio el path si el carrito esta abierto, lo cierro */
+    if (!hiddenCart) { 
     dispatch(toggleHiddenMenu())
   }
     window.scrollTo(0, 0);

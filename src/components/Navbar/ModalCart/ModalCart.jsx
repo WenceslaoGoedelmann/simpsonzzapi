@@ -35,25 +35,25 @@ const ModalCart = () => {
     cartItems,
     shippingCost,
     hidden: hiddenCart,
-  } = useSelector(state => state.cart); /* de esta forma desectruturo el estado cart */
+  } = useSelector(state => state.cart); 
 
-  const totalPrice = cartItems.reduce( /* calculo el costo de todos los productos */
+  const totalPrice = cartItems.reduce( 
     (acc, item) => (acc += item.price * item.quantity),
     0
   );
 
   return (
     <>
-      {!hiddenCart && ( /* si no esta oculto el carrito, muestro el overlay */
+      {!hiddenCart && ( 
         <ModalOverlayStyled
-          onClick={() => dispatch(toggleHiddenCart())} /* si toco en el overlay, llamo al reducer toggleHiddenCart */
-          isHidden={hiddenCart} /* le paso como prop el hiddenCart */
+          onClick={() => dispatch(toggleHiddenCart())} 
+          isHidden={hiddenCart}
         />
       )}
       <AnimatePresence>
-        {!hiddenCart && ( /* si no esta oculto el carrito lo muestro */
+        {!hiddenCart && ( 
           <ContainerStyled
-            initial={{ translateX: 600 }} /* le paso como props la nueva posicion */
+            initial={{ translateX: 600 }} 
             animate={{ translateX: 0 }}
             exit={{ translateX: 600 }}
             transition={{ type: 'spring', damping: 27 }}
@@ -73,9 +73,9 @@ const ModalCart = () => {
               <TitleStyled>
                 <h1>Tus Productos</h1>
                 <Increase
-                  onClick={() => dispatch(clearCart())} /* vacio el carrito */
+                  onClick={() => dispatch(clearCart())} 
                   bgColor='var(--magenta)'
-                  disabled={!cartItems.length} /* si no hay items lo deshabilito */
+                  disabled={!cartItems.length} 
                 >
                   <IoMdTrash />
                 </Increase>
@@ -84,10 +84,10 @@ const ModalCart = () => {
               <ProductsWrapperStyled>
                 {cartItems.length ? (
                   cartItems.map(item => ( 
-                    <ModalCartCard key={item.id} {...item} /> /* si hay items los mapeo y muestro */
+                    <ModalCartCard key={item.id} {...item} /> 
                   ))
                 ) : (
-                  <p>No hay productos todavía</p> /*  si no hay muestro este mensaje */
+                  <p>No hay productos todavía</p> 
                 )}
               </ProductsWrapperStyled>
             </MainContainerStyled>
@@ -112,7 +112,7 @@ const ModalCart = () => {
                 <Submit onClick={() =>{
                    navigate('/checkout');
                    dispatch(toggleHiddenCart());
-                   }}> {/* cuando lo cliqueo redirijo al checkout */}
+                   }}> 
                   Iniciar pedido
                 </Submit>
               </ButtonContainerStyled>

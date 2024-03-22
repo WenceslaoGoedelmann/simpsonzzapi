@@ -20,16 +20,16 @@ const ModalUser = () => {
 
   return (
     <>
-      {!hiddenMenu /* si no esta oculto el carrito, muestro el overlay */ && (
+      {!hiddenMenu  && (
         <ModalOverlayStyled
           onClick={() =>
             dispatch(toggleHiddenMenu())
-          } /* si toco en el overlay, llamo al reducer toggleHiddenCart */
-          isHidden={hiddenMenu} /* le paso como prop el hiddenCart */
+          } 
+          isHidden={hiddenMenu} 
         />
       )}
       <AnimatePresence>
-        {!hiddenMenu /* cuando no esta oculto, muestra el menu */ && (
+        {!hiddenMenu  && (
           <ModalContainerStyled
             initial={{ translateX: 600 }}
             animate={{ translateX: 0 }}
@@ -44,8 +44,8 @@ const ModalUser = () => {
               onClick={() => {
                 dispatch(
                   setCurrentUser(null)
-                ); /* cuando apreto en cerrar sesion cambio el estado del current user a null */
-                dispatch(toggleHiddenMenu()); /* cierro el menu */
+                ); 
+                dispatch(toggleHiddenMenu()); 
               }}
             >
               Cerrar Sesion

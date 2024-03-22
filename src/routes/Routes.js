@@ -17,7 +17,7 @@ function Routes() {
   return (
     <ReactDomRoutes>
       <Route path='/' element={<Home />} />
-      <Route path='/checkout' element={ /* ver explicacion en ProtectedRoute  */
+      <Route path='/checkout' element={
         <ProtectedRoute redirectTo='/login'> 
           <Checkout />
         </ProtectedRoute>

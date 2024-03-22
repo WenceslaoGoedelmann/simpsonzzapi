@@ -53,12 +53,12 @@ function Navbar() {
                   ? dispatch(toggleHiddenMenu())
                   : navigate(
                       "/login"
-                    ) /* si hay usuario logueado cuando hago click me abre el menu de info del usuario y si no me lleva al login */
+                    ) 
             }
           >
             <SpanStyled>
               {currentUser ? `${currentUser.nombre}` : "Inicia sesión"}{" "}
-              {/* si hay usuario me muestra el nombre del usuario y sino muestra inicia sesion */}
+           
             </SpanStyled>
            
           </UserContainerStyled>

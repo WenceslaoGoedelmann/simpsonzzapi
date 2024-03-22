@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { products } from '../../data/Products';
 
 const initialState = {
-  recommended: Array(4) /* de esta forma creo un array de 4 elementos aleatorios */
+  recommended: Array(4) 
     .fill(0)
     .reduce((acc, _item) => {
       const IDs = acc.map(valor => valor.id);
